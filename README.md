@@ -1,50 +1,86 @@
-# Welcome to your Expo app 👋
+# 🌎⚠️ AlertaSolo
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<img src="assets/readme-picture.jpg" alt="Readme Image">
 
-## Get started
+# Sobre o AlertaSolo
 
-1. Install dependencies
+O AlertaSolo é um aplicativo desenvolvido para monitorar e alertar comunidades sobre riscos iminentes de deslizamentos de terra em tempo real. Integrando tecnologia de IOT's, o sistema visa salvar vidas ao fornecer informações precisas e educativas.
 
-   ```bash
-   npm install
-   ```
+## ✨ Funcionalidades
 
-2. Start the app
+### Tela de Boas-vindas e Login
+- Introdução ao propósito do app: prevenção e segurança;
+- Cadastro de usuário com nome, e-mail e cidade;
+- Login seguro com e-mail e senha;
 
-   ```bash
-   npx expo start
-   ```
+### Tela de Alerta em Tempo Real
+- Exibição imediata do nível de risco:
+ - ✅ "Nenhum risco detectado" (Tela verde)
+ - ⚠️ "Risco moderado" (Tela amarela)
+ - ❌ "Risco elevado — evacuação recomendada" (Tela vermelha)
 
-In the output, you'll find options to open the app in a
+### Mapa Interativo de Riscos
+- Localização atual do usuário.
+- Pontos críticos de risco sinalizados com marcadores.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Tela de Dicas de Segurança
+- Passos a seguir durante e depois de um deslizamento.
+- Primeiros socrros.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🚀 Instalando dependências
 
-## Get a fresh project
+Para instalar as dependências do projeto siga estas etapas:
 
-When you're ready, run:
+- Baixe o repositório
+- Abra o terminal e digite o comando:
 
-```bash
-npm run reset-project
+``` bash
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## ☕ Executando o projeto
 
-## Learn more
+Para executar o projeto, siga estas etapas:
 
-To learn more about developing your project with Expo, look at the following resources:
+``` bash
+npx expo start
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+> Caso possua o Android Studio instalado e configurado em sua máquina, basta digitar `a` no terminal para abrir um dispositivo Android.
 
-## Join the community
+> Caso não possua, instale o Expo Go em seu smartphone e escaneie o QR Code gerado no terminal que será exibido em seu smartphone (necessário que o PC e Smartphone estejam na mesma rede).
 
-Join our community of developers creating universal apps.
+## 🤝 Colaboradores
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Agradecemos às seguintes pessoas que contribuíram para este projeto:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/edvxndxvi">
+        <img src="https://avatars.githubusercontent.com/u/109118071?v=4" width="100px;"/><br>
+        <sub>
+          <b>Edvan Davi - RM554733 - 2TDSPZ</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/rafaelromanini">
+        <img src="https://avatars.githubusercontent.com/u/162237423?v=4" width="100px;"/><br>
+        <sub>
+          <b>Rafael Romanini - RM554637 - 2TDSPZ</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/ViniciusLABernardes">
+        <img src="https://avatars.githubusercontent.com/u/111243990?v=4" width="100px;"/><br>
+        <sub>
+          <b>Vinicius Leandro - RM554728 - 2TDSPY</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+
