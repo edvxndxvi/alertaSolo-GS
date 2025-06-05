@@ -22,7 +22,7 @@ export default function FirstAid() {
     },
     {
       title: "5. Falar com calma ajuda a manter a pessoa consciente e diminui o risco de choque emocional.",
-      image: require("@/assets/images/firstAid-1.png"),
+      image: require("@/assets/images/firstAid-5.png"),
     },
   ]
   return (
