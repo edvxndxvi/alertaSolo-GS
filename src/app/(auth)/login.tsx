@@ -2,11 +2,29 @@ import { router } from "expo-router";
 import { Pressable, View, Text, Image, TextInput, Alert } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const createDefaultUser = async () => {
+    const user = await AsyncStorage.getItem("user");
+    if (!user) {
+      const defaultUser = {
+        name: "Usuário Teste",
+        email: "usuario@teste.com",
+        city: "São Paulo",
+        uf: "SP",
+        password: "123456",
+      };
+      await AsyncStorage.setItem("user", JSON.stringify(defaultUser));
+    }
+  };
+
+  useEffect(() => {
+    createDefaultUser();
+  }, []);
 
   const handleLogin = async () => {
     if (!email || !password) {
@@ -31,14 +49,17 @@ export default function Login() {
         Alert.alert("Erro", "Email ou senha incorretos.");
       }
     } catch (error) {
-      Alert.alert("Erro", "Falha ao realizar login.");
+      Alert.alert("Erro", "Falha ao realizar login." + error);
     }
   };
 
   return (
     <SafeAreaView className="flex-1">
       <View className="w-full mt-4 px-4 flex-1 justify-center gap-8">
-        <Image source={require("@/assets/images/logo.png")} className="mx-auto" />
+        <Image
+          source={require("@/assets/images/logo.png")}
+          className="mx-auto"
+        />
         <View className="flex gap-6">
           <TextInput
             className="bg-white rounded-lg px-2 py-4"
@@ -63,12 +84,15 @@ export default function Login() {
           </Pressable>
 
           <View className="flex-row gap-2 justify-center">
-            <Text className="items-center text-stone-600">Não possui conta?</Text>
+            <Text className="items-center text-stone-600">
+              Não possui conta?
+            </Text>
             <Pressable onPress={() => router.push("/register")}>
               <Text className="text-[#6F8940]">Criar conta</Text>
             </Pressable>
           </View>
         </View>
+        <Text>Utilize essas credenciais para logar sem fazer registro: usuario@teste.com - 123456</Text>
       </View>
     </SafeAreaView>
   );

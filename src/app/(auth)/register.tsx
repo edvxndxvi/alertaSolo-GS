@@ -8,21 +8,22 @@ export default function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [city, setCity] = useState("");
+  const [uf, setUf] = useState("");
   const [password, setPassword] = useState("");
 
   const handleRegister = async () => {
-    if (!name || !email || !city || !password) {
+    if (!name || !email || !city || !uf || !password) {
       Alert.alert("Erro", "Preencha todos os campos.");
       return;
     }
 
     try {
-      const user = { name, email, city, password };
+      const user = { name, email, city, uf,password };
       await AsyncStorage.setItem("user", JSON.stringify(user));
       Alert.alert("Sucesso", "Conta criada com sucesso!");
       router.push("/login");
     } catch (error) {
-      Alert.alert("Erro", "Falha ao criar conta.");
+      Alert.alert("Erro", "Falha ao criar conta." + error);
     }
   };
 
@@ -51,6 +52,13 @@ export default function Register() {
             placeholderTextColor="#8e8e8e"
             value={city}
             onChangeText={setCity}
+          />
+          <TextInput
+            className="bg-white rounded-lg px-2 py-4"
+            placeholder="UF"
+            placeholderTextColor="#8e8e8e"
+            value={uf}
+            onChangeText={setUf}
           />
           <TextInput
             className="bg-white rounded-lg px-2 py-4"
